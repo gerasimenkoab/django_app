@@ -20,7 +20,7 @@ class Topic(models.Model):
     starter = models.ForeignKey(User, on_delete = models.CASCADE, related_name='topics')
 
     def __str__(self):
-        return self.name
+        return self.subject
 
 class Post(models.Model):
     message = models.CharField(max_length=400)
@@ -31,6 +31,6 @@ class Post(models.Model):
     updated_by = models.ForeignKey(User, null=True, on_delete = models.CASCADE, related_name='+')
 
     def __str__(self):
-        return self.name
+        return self.message
 
 
