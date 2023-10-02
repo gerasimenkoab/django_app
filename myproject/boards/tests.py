@@ -5,7 +5,9 @@ from django.urls import resolve  # give view function for the given url
 from .views import home, board_topics
 from .models import Board
 
+
 class HomeTests(TestCase):
+    """Class of home page tests"""
     def setUp(self):
         self.board = Board.objects.create(name = 'Django' , description = 'Django board.')
         url = reverse('home')
@@ -31,6 +33,7 @@ class HomeTests(TestCase):
         self.assertContains(response, 'href="{0}"'.format(homepage_url))
 
 class BoardTopicsTests(TestCase):
+    """Class of board tests """
     def setUp(self):
         Board.objects.create(name='Django', description= 'This board about django.')
 
