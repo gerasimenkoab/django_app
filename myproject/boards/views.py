@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404
 from .models import Board
 
@@ -18,3 +18,7 @@ def board_topics(request, pk=1):
 
 def about(request):
     return HttpResponse("Creator mada dis")
+
+def new_topic(request, pk):
+    board = get_object_or_404(Board, pk=pk)
+    return render(request, "new_topic.html",{'board':board})
