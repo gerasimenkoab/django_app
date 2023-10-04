@@ -18,7 +18,8 @@ def board_topics(request, pk=1):
     return render(request, 'topics.html', {'board': board})
 
 def about(request):
-    return HttpResponse("Creator mada dis")
+    return render(request,'about.html')
+    #return HttpResponse("Creator mada dis")
 
 def new_topic(request, pk):
     board = get_object_or_404(Board, pk=pk)
