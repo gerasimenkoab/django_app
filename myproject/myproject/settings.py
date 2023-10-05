@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks', # after install django-widget-tweaks
-    "boards"
+    'boards',
+    'accounts'
 ]
 
 MIDDLEWARE = [
